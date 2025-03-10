@@ -11,23 +11,18 @@ public class TablePanel extends JPanel {
 
     public TablePanel(TableModel data) {
         setBackground(Color.PINK);
-        setPreferredSize(new Dimension(1400, 500));
+        setPreferredSize(new Dimension(1400, 600));
 
-        filter = new JPanel();
-        filter.setBackground(Color.GRAY);
-        filter.setPreferredSize(new Dimension(1380, 80));
+        filter = new JPanel(); // placeholder for where the filter dropdown will be
+        filter.setBackground(Color.LIGHT_GRAY);
+        filter.setPreferredSize(new Dimension(1200, 80));
 
         table = new JTable();
         table.setModel(data);
 
         scrollPane = new JScrollPane(table);
-        scrollPane.setPreferredSize(new Dimension(1380, 490));
+        scrollPane.setPreferredSize(new Dimension(1200, 490));
         table.setFillsViewportHeight(true);
-
-        for(int i = 0; i < table.getColumnCount(); i++) {
-            TableColumn col = table.getColumnModel().getColumn(i);
-            col.sizeWidthToFit();
-        }
 
         add(filter);
         add(scrollPane);

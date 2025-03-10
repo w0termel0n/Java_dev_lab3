@@ -1,7 +1,6 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DataTable extends JPanel {
@@ -9,10 +8,12 @@ public class DataTable extends JPanel {
     TablePanel table;
 
     public DataTable() {
+        // gets the data and separates the first row from the rest
         List<String[]> data = FileParser.readAndParse("pokemon.csv");
         String[] headers = data.getFirst();
         String[][] tableData = data.subList(1, data.size()).toArray(new String[0][]);
 
+        // creates the table with the data and the formatting from TablePanel
         setPreferredSize(new Dimension(1800, 1200));
         table = new TablePanel(new DefaultTableModel(tableData, headers));
         add(table);

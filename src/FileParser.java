@@ -7,10 +7,12 @@ import java.util.List;
 public class FileParser {
 
     public static List<String[]> readAndParse(String fileName) {
-        List<String[]> data = new ArrayList<String[]>();
+        List<String[]> data = new ArrayList<String[]>(); // collection for data
         try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            // data stream that reads every line in the csv file
             String line;
             while((line = br.readLine()) != null) {
+                // adds lists of the values from each line to data
                 data.add(line.split(","));
             }
         } catch(IOException e) {
