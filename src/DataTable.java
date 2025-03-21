@@ -15,7 +15,7 @@ public class DataTable extends JPanel {
 
         // creates the table with the data and the formatting from TablePanel
         setPreferredSize(new Dimension(1800, 1200));
-        table = new TablePanel(new DefaultTableModel(tableData, headers));
+        table = new TablePanel(headers, tableData);
         add(table);
     }
 
