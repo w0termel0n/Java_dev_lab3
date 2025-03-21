@@ -14,7 +14,7 @@ public class DataTable extends JPanel {
         String[][] tableData = data.subList(1, data.size()).toArray(new String[0][]);
 
         // creates the table with the data and the formatting from TablePanel
-        setPreferredSize(new Dimension(1800, 1200));
+        setPreferredSize(new Dimension(1400, 600));
         table = new TablePanel(headers, tableData);
         add(table);
     }
